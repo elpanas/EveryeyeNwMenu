@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<prefwindow xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" 
+            id="everyeyeNWOptions" title="Everyeye.it Network Menu - Preferenze"
+            buttons="accept,cancel" defaultButton="cancel" 
+            style="width: 550px; height: 400px;" 
+            ondialogaccept="everyeyeNWCommon.onLoad(true);">
+  <!-- PANNELLO GENERALE -->
+  <prefpane id="eyegeneral" label="Menu" selected="true" image="chrome://forumeye/skin/forumeye.png">
+    <preferences>
+      <!-- MENU PRINCIPALI -->
+      <preference id="pref_videogiochi" name="extensions.everyeyeNW.videogiochi" type="bool"/>
+      <preference id="pref_movieye" name="extensions.everyeyeNW.movieye" type="bool"/>
+      <preference id="pref_serialeye" name="extensions.everyeyeNW.serialeye" type="bool"/>
+      <preference id="pref_animeye" name="extensions.everyeyeNW.animeye" type="bool"/>
+      <preference id="pref_techeye" name="extensions.everyeyeNW.techeye" type="bool"/>
+      <preference id="pref_webtv" name="extensions.everyeyeNW.webtv" type="bool"/>
+      <preference id="pref_serialeye" name="extensions.everyeyeNW.serialeye" type="bool"/>
+      <preference id="pref_eyech" name="extensions.everyeyeNW.eyech" type="bool"/>
+      <preference id="pref_forumeye" name="extensions.everyeyeNW.forumeye" type="bool"/>
+      <preference id="pref_evento_attuale" name="extensions.everyeyeNW.evento_attuale" type="bool"/>
+      <preference id="pref_altro" name="extensions.everyeyeNW.altro" type="bool"/>
+      <!-- PIATTAFORME -->
+      <preference id="pref_x360" name="extensions.everyeyeNW.x360" type="bool"/>
+      <preference id="pref_xone" name="extensions.everyeyeNW.xone" type="bool"/>
+      <preference id="pref_pc" name="extensions.everyeyeNW.pc" type="bool"/>
+      <preference id="pref_ps3" name="extensions.everyeyeNW.ps3" type="bool"/>
+      <preference id="pref_ps4" name="extensions.everyeyeNW.ps4" type="bool"/>
+      <preference id="pref_psvita" name="extensions.everyeyeNW.psvita" type="bool"/> 
+      <preference id="pref_wiiu" name="extensions.everyeyeNW.wiiu" type="bool"/>
+      <preference id="pref_3ds" name="extensions.everyeyeNW.3ds" type="bool"/>      
+      <preference id="pref_mobile" name="extensions.everyeyeNW.mobile" type="bool"/>
+      <!-- FORUMEYE -->
+      <preference id="pref_forum-nextgen" name="extensions.everyeyeNW.forum-nextgen" type="bool"/>
+      <preference id="pref_forum-general" name="extensions.everyeyeNW.forum-general" type="bool"/>
+      <preference id="pref_forum-digital" name="extensions.everyeyeNW.forum-digital" type="bool"/>
+      <preference id="pref_forum-rubriche" name="extensions.everyeyeNW.forum-rubriche" type="bool"/>
+      <preference id="pref_forum-magazine" name="extensions.everyeyeNW.forum-magazine" type="bool"/>
+      <preference id="pref_forum-tornei" name="extensions.everyeyeNW.forum-tornei" type="bool"/>
+      <preference id="pref_forum-market" name="extensions.everyeyeNW.forum-market" type="bool"/>
+      <preference id="pref_forum-com" name="extensions.everyeyeNW.forum-com" type="bool"/>
+      <preference id="pref_forum-staff" name="extensions.everyeyeNW.forum-staff" type="bool"/>
+      <preference id="pref_forum-eventi" name="extensions.everyeyeNW.forum-eventi" type="bool"/>
+      <preference id="pref_update-time" name="extensions.everyeyeNW.update_time" type="int"/>
+      <preference id="pref_atv_alert" name="extensions.everyeyeNW.atv_alert" type="bool"/>
+    </preferences>
+    <tabbox>
+      <tabs>
+        <tab label="Sezioni generali"/>
+        <tab label="Forumeye"/>
+      </tabs>
+      <tabpanels>
+        <tabpanel>
+          <vbox flex="1">
+            <!-- Menu principali -->
+            <groupbox >
+              <caption label="Menu principali" />
+              <hbox >
+                <vbox>
+                  <checkbox id="videogiochi" preference="pref_videogiochi" label="Videogiochi" />
+                  <checkbox id="movieye" preference="pref_movieye" label="Cinema" />
+                  <checkbox id="serialeye" preference="pref_serialeye" label="Serie TV" />
+                  <checkbox id="animeye" preference="pref_animeye" label="Anime &amp; Manga" />
+                </vbox>
+                <vbox>
+                  <checkbox id="tech" preference="pref_techeye" label="Tech" />
+                  <checkbox id="altro" preference="pref_altro" label="Altro" />
+                  <checkbox id="eyech" preference="pref_eyech" label="MyEye" />
+                  <checkbox id="webtv" preference="pref_webtv" label="TV" /> 
+                </vbox>
+                <vbox>
+                  <checkbox id="forumeye" preference="pref_forumeye" label="Forumeye" />
+                  <checkbox id="evento_attuale" preference="pref_evento_attuale" label="Eventi" />                    
+                </vbox>
+              </hbox>
+            </groupbox>
+            <!-- Piattaforme -->
+            <groupbox >
+              <caption label="Piattaforme" />
+              <hbox>
+                <vbox>
+                  <checkbox id="x360" preference="pref_x360" label="Xbox 360" />
+                  <checkbox id="xone" preference="pref_xone" label="Xbox One" />                      
+                  <checkbox id="ps3" preference="pref_ps3" label="PlayStation 3" />
+                  <checkbox id="ps4" preference="pref_ps4" label="PlayStation 4" />                   
+                  <checkbox id="psvita" preference="pref_psvita" label="PlayStation Vita" />
+                </vbox>
+                <vbox>
+                  <checkbox id="pc" preference="pref_pc" label="PC" />
+                  <checkbox id="wiiu" preference="pref_wiiu" label="Wii U" /> 
+                  <checkbox id="3ds" preference="pref_3ds" label="3DS" />
+                  <checkbox id="mobile" preference="pref_mobile" label="Mobile" />                  
+                </vbox> 
+              </hbox>
+            </groupbox>
+          </vbox>
+        </tabpanel>
+        <!-- Sottoforum -->
+        <tabpanel>
+          <vbox flex="1">
+            <groupbox>
+              <caption label="Sottoforum generali" />
+              <hbox>
+                <vbox>
+                  <checkbox id="forum-nextgen" preference="pref_forum-nextgen" label="Next Generation Gaming" />
+                  <checkbox id="forum-general" preference="pref_forum-general" label="General Personal Computer Forums" />
+                  <checkbox id="forum-digital" preference="pref_forum-digital" label="Digital Life: Eyes on Entertainment" />
+                  <checkbox id="forum-rubriche" preference="pref_forum-rubriche" label="RubrichEye" />
+                  <checkbox id="forum-magazine" preference="pref_forum-magazine" label="Magazines" />
+                </vbox>
+                <vbox>
+                  <checkbox id="forum-tornei" preference="pref_forum-tornei" label="Forum dei Tornei e Forum Clan" />
+                  <checkbox id="forum-market" preference="pref_forum-market" label="Mercatino" />
+                  <checkbox id="forum-com" preference="pref_forum-com" label="Community" />
+                  <checkbox id="forum-staff" preference="pref_forum-staff" label="Forumeye Staff" />
+                </vbox>
+              </hbox>
+              <spacer flex="1"/>
+            </groupbox>
+          </vbox>
+        </tabpanel>
+      </tabpanels>
+    </tabbox>
+  </prefpane>
+  <!-- PANNELLO ALERTS -->
+  <prefpane id="eyealerts" label="Alerts" image="chrome://forumeye/skin/icone/advanced.png" selected="false">
+    <!-- Svuotamento cache -->
+      <groupbox>          
+      <vbox>
+        <hbox>
+          <vbox>
+            <spacer flex="1"/>
+            <label value="Aggiorna gli alerts ogni:" />
+            <spacer flex="1"/>
+          </vbox>
+          <vbox valign="middle">
+            <spacer flex="1"/>
+            <menulist id="EEupdate-time" preference="pref_update-time" sizetopopup="always">
+              <menupopup >
+                <menuitem value="900" label="15 minuti" />
+                <menuitem value="1800" label="30 minuti" />
+                <menuitem value="3600" label="1 ora (consigliato)" />
+                <menuitem value="10800" label="3 ore" />
+                <menuitem value="21600" label="6 ore" />
+                <menuitem value="43200" label="12 ore" />
+                <menuitem value="86400" label="24 ore" />
+              </menupopup>
+            </menulist>
+            <spacer flex="1"/>
+          </vbox>
+        </hbox>            
+      </vbox>
+      </groupbox>
+      <groupbox>
+        <caption>
+          <checkbox id="check_reset" label="Resetta gli Alerts" oncommand="everyeyeNWReset.attivaBottone(true)" />
+        </caption>
+        <hbox>                   
+           <button id="reset_alert" label="Resetta gli alerts" align="baseline" disabled="true" oncommand="everyeyeNWReset.deleteNews(true)"/>   
+        </hbox>   
+      </groupbox>
+    </prefpane>
+    <script type="application/x-javascript" src="chrome://forumeye/content/js/common.js"/>
+    <script type="application/x-javascript" src="chrome://forumeye/content/js/reset_news.js"/>
+    <script type="application/x-javascript" src="chrome://forumeye/content/js/notizie.js"/>
+</prefwindow>

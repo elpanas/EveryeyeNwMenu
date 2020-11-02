@@ -1,0 +1,18 @@
+.forumeye-newstitolo{list-style-image:url("chrome://forumeye/skin/icone/home.png");   font-weight:bold;   }
+/* --- ICONA NEWS --- */
+.forumeye-imagebar{list-style-image:url("chrome://forumeye/skin/icone/home.png");   }
+/* ------------------ */
+/* --- NEWS --- */
+.forumeye-gameitem{list-style-image:url("chrome://forumeye/skin/icone/newsbar.png");   font-weight:bold; }
+.forumeye-gameread{list-style-image:url("chrome://forumeye/skin/icone/newsbar.png");   }
+/* ------------------ */
+/* --- CONTEST --- */
+.forumeye-contestitem{list-style-image:url("chrome://forumeye/skin/icone/contest.png");   font-weight:bold;   }
+.forumeye-contestread{list-style-image:url("chrome://forumeye/skin/icone/contest.png");  }
+/* ------------------ */
+/* --- TORNEI --- */
+.forumeye-tornitem{list-style-image:url("chrome://forumeye/skin/icone/torneo.png");   font-weight:bold;   }
+.forumeye-tornread{list-style-image:url("chrome://forumeye/skin/icone/torneo.png");   }
+/* ------------------ */
+
+.forumeye-delete{list-style-image:url("chrome://forumeye/skin/icone/delete.png");   }

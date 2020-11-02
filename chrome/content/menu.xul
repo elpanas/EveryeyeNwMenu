@@ -1,0 +1,800 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://forumeye/skin/forumeye.css" type="text/css"?>
+<?xml-stylesheet href="chrome://forumeye/skin/eyenews.css" type="text/css"?>
+<overlay id="forumeye" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" >
+<script type="application/x-javascript" src="chrome://forumeye/content/js/common.js"/>
+<script type="application/x-javascript" src="chrome://forumeye/content/js/evento.js"/>
+<script type="application/x-javascript" src="chrome://forumeye/content/js/reset_news.js"/> 
+<script type="application/x-javascript" src="chrome://forumeye/content/js/notizie.js"/>
+<!-- Firefox -->
+<toolbarpalette id="BrowserToolbarPalette">
+  <toolbarbutton id="ee-button"/>
+  </toolbarpalette>
+      <toolbarbutton id="ee-button" 
+                     type="menu"
+                     label="EE.it Menu"                      
+                     tooltiptext="Everyeye.it Network Menu"
+                     class="toolbarbutton-1 chromeclass-toolbar-additional">
+        <menupopup id="eenw-popup" position="after_end" onpopupshowing="everyeyeNWCommon.onLoad();">
+        <!-- VIDEOGIOCHI MENU -->
+        <menu id="eenw-games-menu" class="menu-iconic forumeye-home" label="Videogiochi" >                     
+          <menupopup id="eenw-games-popup">
+            <menuitem class="menuitem-iconic forumeye-homepage" label="Homepage" oncommand="everyeyeNWCommon.apri('http://www.everyeye.it/',0);" />
+            <menuseparator/>
+            <menuitem class="menuitem-iconic forumeye-multi" label="Notizie" oncommand="everyeyeNWCommon.apri('notizie',1);" />
+            <menuitem class="menuitem-iconic forumeye-multi" label="Recensioni" oncommand="everyeyeNWCommon.apri('recensioni',1);" />
+            <menuitem class="menuitem-iconic forumeye-multi" label="Anteprime" oncommand="everyeyeNWCommon.apri('anteprime',1);" />
+            <menuseparator/>
+            
+            <!-- PC -->
+            <menu class="menu-iconic forumeye-pc" label="PC" id="eenw-gamespc-menu" >
+              <menupopup id="eenw-gamespc-popup">
+                <menuitem class="menuitem-iconic forumeye-pc" label="PC" oncommand="everyeyeNWCommon.apri(' ',12);" />
+                <menuseparator/>
+                <menu class="menu-iconic forumeye-pc" label="Giochi PC">
+                  <menupopup id="eenw-subgames-pc">
+                    <menuitem class="menuitem-iconic forumeye-pc" label="Recensioni" oncommand="everyeyeNWCommon.apri('recensioni',12);" />
+                    <menuitem class="menuitem-iconic forumeye-pc" label="In uscita" oncommand="everyeyeNWCommon.apri('inuscita',12);" />
+                    <menuitem class="menuitem-iconic forumeye-pc" label="Tutti i giochi" oncommand="everyeyeNWCommon.apri('allgames',12);" />
+                    <menuitem class="menuitem-iconic forumeye-pc" label="Covers" oncommand="everyeyeNWCommon.apri('covers',12);" />                                                              
+                  </menupopup>
+                </menu>
+                <menuseparator/>
+                <menu class="menu-iconic forumeye-pc" label="Novit&#224; PC">
+                  <menupopup id="eenw-subnews-pc">
+                    <menuitem class="menuitem-iconic forumeye-pc" label="Notizie" oncommand="everyeyeNWCommon.apri('notizie',12);" />
+                    <menuitem class="menuitem-iconic forumeye-pc" label="Anteprime" oncommand="everyeyeNWCommon.apri('anteprime',12);" />
+                    <menuitem class="menuitem-iconic forumeye-pc" label="Speciali" oncommand="everyeyeNWCommon.apri('speciali',12);" />
+                    <menuitem class="menuitem-iconic forumeye-pc" label="Video" oncommand="everyeyeNWCommon.apri('video',12);" />
+                    <menuitem class="menuitem-iconic forumeye-pc" label="Top games" oncommand="everyeyeNWCommon.apri('topgames',12);" />
+                    <menuitem class="menuitem-iconic forumeye-pc" label="Videorecensioni" oncommand="everyeyeNWCommon.apri(4,31);" />
+                    <menuitem class="menuitem-iconic forumeye-pc" label="I giochi pi&#367; attesi" oncommand="everyeyeNWCommon.apri('attesi',12);" />                                                                                                                        
+                  </menupopup>
+                </menu>
+                <menuseparator/>            
+                <menu class="menu-iconic forumeye-pc" label="Community PC">
+                  <menupopup id="eenw-subcom-pc">
+                    <menuitem class="menuitem-iconic forumeye-f_home_pc" label="Forum PC" oncommand="everyeyeNWCommon.apri('25-pceye-tutto-sui-videogiochi-per-pc/',6);" />
+                    <menuitem class="menuitem-iconic forumeye-pc" label="Recensioni utente" oncommand="everyeyeNWCommon.apri('receutenti',12);" />
+                    <menuitem class="menuitem-iconic forumeye-pc" label="Anteprime utente" oncommand="everyeyeNWCommon.apri('anteutenti',12);" />
+                    <menuitem class="menuitem-iconic forumeye-pc" label="Mercatino PC" oncommand="everyeyeNWCommon.apri('692-mercatino-pc/',6);" />
+                  </menupopup>
+                </menu>
+              </menupopup>
+            </menu>
+            
+            <!-- Xbox 360 -->
+            <menu class="menu-iconic forumeye-360" label="Xbox 360" id="eenw-games360-menu" >
+              <menupopup id="eenw-games360-popup">
+                <menuitem class="menuitem-iconic forumeye-360" label="X360eye" oncommand="everyeyeNWCommon.apri(' ',7);" />
+                <menuseparator/>
+                <menu class="menu-iconic forumeye-360" label="Giochi 360">
+                  <menupopup id="eenw-subgames-360">
+                    <menuitem class="menuitem-iconic forumeye-360" label="Recensioni" oncommand="everyeyeNWCommon.apri('recensioni',7);" />
+                    <menuitem class="menuitem-iconic forumeye-360" label="In uscita" oncommand="everyeyeNWCommon.apri('inuscita',7);" />
+                    <menuitem class="menuitem-iconic forumeye-360" label="Tutti i giochi" oncommand="everyeyeNWCommon.apri('allgames',7);" />
+                    <menuitem class="menuitem-iconic forumeye-360" label="Covers" oncommand="everyeyeNWCommon.apri('covers',7);" />                                                              
+                  </menupopup>
+                </menu>
+                <menuseparator/>
+                <menu class="menu-iconic forumeye-360" label="Novit&#224; Xbox 360">
+                  <menupopup id="eenw-subnews-360">
+                    <menuitem class="menuitem-iconic forumeye-360" label="Notizie" oncommand="everyeyeNWCommon.apri('notizie',7);" />
+                    <menuitem class="menuitem-iconic forumeye-360" label="Anteprime" oncommand="everyeyeNWCommon.apri('anteprime',7);" />
+                    <menuitem class="menuitem-iconic forumeye-360" label="Speciali" oncommand="everyeyeNWCommon.apri('speciali',7);" />
+                    <menuitem class="menuitem-iconic forumeye-360" label="Video" oncommand="everyeyeNWCommon.apri('video',7);" />
+                    <menuitem class="menuitem-iconic forumeye-360" label="Top games" oncommand="everyeyeNWCommon.apri('topgames',7);" />
+                    <menuitem class="menuitem-iconic forumeye-360" label="Videorecensioni" oncommand="everyeyeNWCommon.apri(20,31);" />                
+                    <menuitem class="menuitem-iconic forumeye-360" label="Videogiochi XBLA" oncommand="everyeyeNWCommon.apri('livearcade',7);" />
+                    <menuitem class="menuitem-iconic forumeye-360" label="Download Content" oncommand="everyeyeNWCommon.apri('dlc',7);" />
+                    <menuitem class="menuitem-iconic forumeye-360" label="I giochi pi&#367; attesi" oncommand="everyeyeNWCommon.apri('attesi',7);" />                                                                                                                        
+                  </menupopup>
+                </menu>
+                <menuseparator/>
+                <menu class="menu-iconic forumeye-360" label="Community Xbox 360">
+                  <menupopup id="eenw-subcom-360">
+                    <menuitem class="menuitem-iconic forumeye-f_x360" label="Forum Xbox 360" oncommand="everyeyeNWCommon.apri('239-xbox-one-xbox-360-eye/',6);" />
+                    <menuitem class="menuitem-iconic forumeye-360" label="Recensioni utente" oncommand="everyeyeNWCommon.apri('receutenti',7);" />
+                    <menuitem class="menuitem-iconic forumeye-360" label="Anteprime utente" oncommand="everyeyeNWCommon.apri('anteutenti',7);" />
+                    <menuitem class="menuitem-iconic forumeye-forum" label="Mercatino Microsoft" oncommand="everyeyeNWCommon.apri('45-microsoft/',6);" />
+                  </menupopup>
+                </menu>
+              </menupopup>
+            </menu>
+            <!-- Xbox One -->
+            <menu class="menu-iconic forumeye-x1" label="Xbox One" id="eenw-gamesxone-menu" >
+              <menupopup id="eenw-gamesxone-popup">
+                <menuitem class="menuitem-iconic forumeye-x1" label="Xbox One" oncommand="everyeyeNWCommon.apri(' ',7);" />
+                <menuseparator/>
+                <menu class="menu-iconic forumeye-x1" label="Giochi Xbox One">
+                  <menupopup id="eenw-subgames-xone">
+                    <!-- <menuitem class="menuitem-iconic forumeye-360" label="Recensioni" oncommand="everyeyeNWCommon.apri('recensioni',71);" /> -->
+                    <menuitem class="menuitem-iconic forumeye-x1" label="In uscita" oncommand="everyeyeNWCommon.apri('inuscita',71);" />
+                    <menuitem class="menuitem-iconic forumeye-x1" label="Tutti i giochi" oncommand="everyeyeNWCommon.apri('allgames',71);" />
+                    <menuitem class="menuitem-iconic forumeye-x1" label="Covers" oncommand="everyeyeNWCommon.apri('covers',71);" />                                                              
+                  </menupopup>
+                </menu>
+                <menuseparator/>
+                <menu class="menu-iconic forumeye-x1" label="Novit&#224; Xbox One">
+                  <menupopup id="eenw-subnews-xone">
+                    <menuitem class="menuitem-iconic forumeye-x1" label="Notizie" oncommand="everyeyeNWCommon.apri('notizie',71);" />
+                    <menuitem class="menuitem-iconic forumeye-x1" label="Anteprime" oncommand="everyeyeNWCommon.apri('anteprime',71);" />
+                    <menuitem class="menuitem-iconic forumeye-x1" label="Speciali" oncommand="everyeyeNWCommon.apri('speciali',71);" />
+                    <menuitem class="menuitem-iconic forumeye-x1" label="Video" oncommand="everyeyeNWCommon.apri('video',71);" />
+                    <menuitem class="menuitem-iconic forumeye-x1" label="Top games" oncommand="everyeyeNWCommon.apri('topgames',71);" />
+                    <menuitem class="menuitem-iconic forumeye-x1" label="Videorecensioni" oncommand="everyeyeNWCommon.apri(20,31);" />                
+                    <menuitem class="menuitem-iconic forumeye-x1" label="Videogiochi XBLA" oncommand="everyeyeNWCommon.apri('livearcade',71);" />
+                    <menuitem class="menuitem-iconic forumeye-x1" label="Download Content" oncommand="everyeyeNWCommon.apri('dlc',71);" />
+                    <menuitem class="menuitem-iconic forumeye-x1" label="I giochi pi&#367; attesi" oncommand="everyeyeNWCommon.apri('attesi',71);" />                                                                                                                        
+                  </menupopup>
+                </menu>
+                <menuseparator/>
+                <menu class="menu-iconic forumeye-x1" label="Community Xbox One">
+                  <menupopup id="eenw-subcom-xone">
+                    <menuitem class="menuitem-iconic forumeye-f_x1" label="Forum Xbox One" oncommand="everyeyeNWCommon.apri('239-xbox-one-xbox-360-eye/',6);" />
+                    <!-- <menuitem class="menuitem-iconic forumeye-360" label="Recensioni utente" oncommand="everyeyeNWCommon.apri('receutenti',71);" />
+                    <menuitem class="menuitem-iconic forumeye-360" label="Anteprime utente" oncommand="everyeyeNWCommon.apri('anteutenti',71);" /> -->
+                    <menuitem class="menuitem-iconic forumeye-forum" label="Mercatino Microsoft" oncommand="everyeyeNWCommon.apri('45-microsoft/',6);" />
+                  </menupopup>
+                </menu>
+              </menupopup>
+            </menu>
+            <!-- PS3 -->
+            <menu class="menu-iconic forumeye-ps3" label="PlayStation 3" id="eenw-gamesps3-menu">
+              <menupopup id="eenw-gamesps3-popup">
+                <menuitem class="menuitem-iconic forumeye-ps3" label="Play3eye" oncommand="everyeyeNWCommon.apri(' ',8);" />
+                <menuseparator/>            
+                <menu class="menu-iconic forumeye-ps3" label="Giochi PlayStation 3">
+                  <menupopup id="eenw-subgames-ps3">
+                    <menuitem class="menuitem-iconic forumeye-ps3" label="Recensioni" oncommand="everyeyeNWCommon.apri('recensioni',8);" />
+                    <menuitem class="menuitem-iconic forumeye-ps3" label="In uscita" oncommand="everyeyeNWCommon.apri('inuscita',8);" />
+                    <menuitem class="menuitem-iconic forumeye-ps3" label="Tutti i giochi" oncommand="everyeyeNWCommon.apri('allgames',8);" />
+                    <menuitem class="menuitem-iconic forumeye-ps3" label="Covers" oncommand="everyeyeNWCommon.apri('covers',8);" />                                                              
+                  </menupopup>
+                </menu>
+                <menuseparator/>
+                <menu class="menu-iconic forumeye-ps3" label="Novit&#224; PlayStation 3">
+                  <menupopup id="eenw-subnews-ps3">
+                    <menuitem class="menuitem-iconic forumeye-ps3" label="Notizie" oncommand="everyeyeNWCommon.apri('notizie',8);" />
+                    <menuitem class="menuitem-iconic forumeye-ps3" label="Anteprime" oncommand="everyeyeNWCommon.apri('anteprime',8);" />
+                    <menuitem class="menuitem-iconic forumeye-ps3" label="Speciali" oncommand="everyeyeNWCommon.apri('speciali',8);" />
+                    <menuitem class="menuitem-iconic forumeye-ps3" label="Video" oncommand="everyeyeNWCommon.apri('video',8);" />
+                    <menuitem class="menuitem-iconic forumeye-ps3" label="Top games" oncommand="everyeyeNWCommon.apri('topgames',8);" />
+                    <menuitem class="menuitem-iconic forumeye-ps3" label="Videorecensioni" oncommand="everyeyeNWCommon.apri(22,31);" />
+                    <menuitem class="menuitem-iconic forumeye-ps3" label="Videogiochi PSN" oncommand="everyeyeNWCommon.apri('psn',8);" />
+                    <menuitem class="menuitem-iconic forumeye-ps3" label="Download Content" oncommand="everyeyeNWCommon.apri('dlc',8);" />
+                    <menuitem class="menuitem-iconic forumeye-ps3" label="I giochi pi&#367; attesi" oncommand="everyeyeNWCommon.apri('attesi',8);" />                                                                                                                        
+                  </menupopup>
+                </menu>
+                <menuseparator/>            
+                <menu class="menu-iconic forumeye-ps3" label="Community PlayStation 3">
+                  <menupopup id="eenw-subcom-ps3">
+                    <menuitem class="menuitem-iconic forumeye-f_ps3" label="Forum PlayStation 3" oncommand="everyeyeNWCommon.apri('240-ps4-playstation-3-eye/',6);" />
+                    <menuitem class="menuitem-iconic forumeye-ps3" label="Recensioni utente" oncommand="everyeyeNWCommon.apri('receutenti',8);" />
+                    <menuitem class="menuitem-iconic forumeye-ps3" label="Anteprime utente" oncommand="everyeyeNWCommon.apri('anteutenti',8);" />
+                    <menuitem class="menuitem-iconic forumeye-ps3" label="Mercatino Sony" oncommand="everyeyeNWCommon.apri('43-sony/',6);" />
+                  </menupopup>
+                </menu>
+              </menupopup>
+            </menu>
+                        
+            <!-- PS4 -->
+            <menu class="menu-iconic forumeye-ps4" label="PlayStation 4" id="eenw-gamesps4-menu">
+              <menupopup id="eenw-gamesps4-popup">
+                <menuitem class="menuitem-iconic forumeye-ps4" label="PlayStation 4" oncommand="everyeyeNWCommon.apri(' ',81);" />
+                <menuseparator/>            
+                <menu class="menu-iconic forumeye-ps4" label="Giochi PlayStation 4">
+                  <menupopup id="eenw-subgames-ps4">
+                    <menuitem class="menuitem-iconic forumeye-ps4" label="Recensioni" oncommand="everyeyeNWCommon.apri('recensioni',81);" />
+                    <menuitem class="menuitem-iconic forumeye-ps4" label="In uscita" oncommand="everyeyeNWCommon.apri('inuscita',81);" />
+                    <menuitem class="menuitem-iconic forumeye-ps4" label="Tutti i giochi" oncommand="everyeyeNWCommon.apri('allgames',81);" />
+                    <menuitem class="menuitem-iconic forumeye-ps4" label="Covers" oncommand="everyeyeNWCommon.apri('covers',81);" />                                                              
+                  </menupopup>
+                </menu>
+                <menuseparator/>
+                <menu class="menu-iconic forumeye-ps4" label="Novit&#224; PlayStation 4">
+                  <menupopup id="eenw-subnews-ps4">
+                    <menuitem class="menuitem-iconic forumeye-ps4" label="Notizie" oncommand="everyeyeNWCommon.apri('notizie',81);" />
+                    <menuitem class="menuitem-iconic forumeye-ps4" label="Anteprime" oncommand="everyeyeNWCommon.apri('anteprime',81);" />
+                    <menuitem class="menuitem-iconic forumeye-ps4" label="Speciali" oncommand="everyeyeNWCommon.apri('speciali',81);" />
+                    <menuitem class="menuitem-iconic forumeye-ps4" label="Video" oncommand="everyeyeNWCommon.apri('video',81);" />
+                    <menuitem class="menuitem-iconic forumeye-ps4" label="Top games" oncommand="everyeyeNWCommon.apri('topgames',81);" />
+                    <menuitem class="menuitem-iconic forumeye-ps4" label="Videorecensioni" oncommand="everyeyeNWCommon.apri(22,31);" />
+                    <menuitem class="menuitem-iconic forumeye-ps4" label="Videogiochi PSN" oncommand="everyeyeNWCommon.apri('psn',81);" />
+                    <menuitem class="menuitem-iconic forumeye-ps4" label="Download Content" oncommand="everyeyeNWCommon.apri('dlc',8);" />
+                    <menuitem class="menuitem-iconic forumeye-ps4" label="I giochi pi&#367; attesi" oncommand="everyeyeNWCommon.apri('attesi',8);" />                                                                                                                        
+                  </menupopup>
+                </menu>
+                <menuseparator/>            
+                <menu class="menu-iconic forumeye-ps4" label="Community PlayStation 4">
+                  <menupopup id="eenw-subcom-ps4">
+                    <menuitem class="menuitem-iconic forumeye-ps4" label="Forum PlayStation 4" oncommand="everyeyeNWCommon.apri('240-ps4-playstation-3-eye/',6);" />
+                    <!-- <menuitem class="menuitem-iconic forumeye-ps4" label="Recensioni utente" oncommand="everyeyeNWCommon.apri('receutenti',8);" />
+                    <menuitem class="menuitem-iconic forumeye-ps4" label="Anteprime utente" oncommand="everyeyeNWCommon.apri('anteutenti',8);" /> -->
+                    <menuitem class="menuitem-iconic forumeye-ps4" label="Mercatino Sony" oncommand="everyeyeNWCommon.apri('43-sony/',6);" />
+                  </menupopup>
+                </menu>
+              </menupopup>
+            </menu>  
+            
+            <!-- PS Vita -->
+            <menu class="menu-iconic forumeye-f_psp" label="PS Vita" id="eenw-gamespsvita-menu" >
+              <menupopup id="eenw-gamespsvita-popup">
+                <menuitem class="menuitem-iconic forumeye-f_psp" label="PS Vita" oncommand="everyeyeNWCommon.apri(' ',23);" />
+                <menuseparator/>
+                <menu class="menu-iconic forumeye-f_psp" label="Giochi PS Vita">
+                  <menupopup id="eenw-subgames-psvita">
+                    <menuitem class="menuitem-iconic forumeye-f_psp" label="Recensioni" oncommand="everyeyeNWCommon.apri('recensioni',23);" />
+                    <menuitem class="menuitem-iconic forumeye-f_psp" label="In uscita" oncommand="everyeyeNWCommon.apri('inuscita',23);" />
+                    <menuitem class="menuitem-iconic forumeye-f_psp" label="Tutti i giochi" oncommand="everyeyeNWCommon.apri('allgames',23);" />
+                    <menuitem class="menuitem-iconic forumeye-f_psp" label="Covers" oncommand="everyeyeNWCommon.apri('covers',23);" />                                                              
+                  </menupopup>
+                </menu>
+                <menuseparator/>
+                <menu class="menu-iconic forumeye-f_psp" label="Novit&#224; PS Vita">
+                  <menupopup id="eenw-subnews-psvita">
+                    <menuitem class="menuitem-iconic forumeye-f_psp" label="Notizie" oncommand="everyeyeNWCommon.apri('notizie',23);" />
+                    <menuitem class="menuitem-iconic forumeye-f_psp" label="Anteprime" oncommand="everyeyeNWCommon.apri('anteprime',23);" />
+                    <menuitem class="menuitem-iconic forumeye-f_psp" label="Speciali" oncommand="everyeyeNWCommon.apri('speciali',23);" />
+                    <menuitem class="menuitem-iconic forumeye-f_psp" label="Video" oncommand="everyeyeNWCommon.apri('video',23);" />
+                    <menuitem class="menuitem-iconic forumeye-f_psp" label="Top games" oncommand="everyeyeNWCommon.apri('topgames',23);" />
+                    <menuitem class="menuitem-iconic forumeye-f_psp" label="I giochi pi&#367; attesi" oncommand="everyeyeNWCommon.apri('attesi',23);" />                                                                                                                        
+                  </menupopup>
+                </menu>
+                <menuseparator/>            
+                <menu class="menu-iconic forumeye-f_psp" label="Community PS Vita">
+                  <menupopup id="eenw-subcom-psvita">
+                    <menuitem class="menuitem-iconic forumeye-f_psp" label="Forum PS Vita" oncommand="everyeyeNWCommon.apri('254-playstation-vita-psp-xperia-play/',6);" />
+                    <menuitem class="menuitem-iconic forumeye-f_psp" label="Recensioni utente" oncommand="everyeyeNWCommon.apri('receutenti',23);" />
+                    <menuitem class="menuitem-iconic forumeye-f_psp" label="Anteprime utente" oncommand="everyeyeNWCommon.apri('anteutenti',23);" />
+                    <menuitem class="menuitem-iconic forumeye-f_psp" label="Mercatino Sony" oncommand="everyeyeNWCommon.apri('43-sony/',6);" />
+                  </menupopup>
+                </menu>
+              </menupopup>
+            </menu>                    
+            
+            <!-- 3DS -->
+            <menu class="menu-iconic forumeye-3ds" label="3DS" id="eenw-games3ds-menu" >
+              <menupopup id="eenw-gamespc-popup">
+                <menuitem class="menuitem-iconic forumeye-3ds" label="3DSeye" oncommand="everyeyeNWCommon.apri(' ',13);" />
+                <menuseparator/>
+                <menu class="menu-iconic forumeye-3ds" label="Giochi 3DS">
+                  <menupopup id="eenw-subgames-3ds">
+                    <menuitem class="menuitem-iconic forumeye-3ds" label="Recensioni" oncommand="everyeyeNWCommon.apri('recensioni',13);" />
+                    <menuitem class="menuitem-iconic forumeye-3ds" label="In uscita" oncommand="everyeyeNWCommon.apri('inuscita',13);" />
+                    <menuitem class="menuitem-iconic forumeye-3ds" label="Tutti i giochi" oncommand="everyeyeNWCommon.apri('allgames',13);" />
+                    <menuitem class="menuitem-iconic forumeye-3ds" label="Covers" oncommand="everyeyeNWCommon.apri('covers',13);" />                                                              
+                  </menupopup>
+                </menu>
+                <menuseparator/>
+                <menu class="menu-iconic forumeye-3ds" label="Novit&#224; 3DS">
+                  <menupopup id="eenw-subnews-3ds">
+                    <menuitem class="menuitem-iconic forumeye-3ds" label="Notizie" oncommand="everyeyeNWCommon.apri('notizie',13);" />
+                    <menuitem class="menuitem-iconic forumeye-3ds" label="Anteprime" oncommand="everyeyeNWCommon.apri('anteprime',13);" />
+                    <menuitem class="menuitem-iconic forumeye-3ds" label="Speciali" oncommand="everyeyeNWCommon.apri('speciali',13);" />
+                    <menuitem class="menuitem-iconic forumeye-3ds" label="Video" oncommand="everyeyeNWCommon.apri('video',13);" />
+                    <menuitem class="menuitem-iconic forumeye-3ds" label="I giochi pi&#367; attesi" oncommand="everyeyeNWCommon.apri('attesi',13);" />                                                                                                                        
+                  </menupopup>
+                </menu>
+                <menuseparator/>            
+                <menu class="menu-iconic forumeye-3ds" label="Community 3DS">
+                  <menupopup id="eenw-subcom-3ds">
+                    <menuitem class="menuitem-iconic forumeye-3ds" label="Forum 3DS" oncommand="everyeyeNWCommon.apri('253-3ds-ds-gba-eye/',6);" />
+                    <menuitem class="menuitem-iconic forumeye-3ds" label="Recensioni utente" oncommand="everyeyeNWCommon.apri('receutenti',13);" />
+                    <menuitem class="menuitem-iconic forumeye-3ds" label="Anteprime utente" oncommand="everyeyeNWCommon.apri('anteutenti',13);" />
+                    <menuitem class="menuitem-iconic forumeye-3ds" label="Mercatino Nintendo" oncommand="everyeyeNWCommon.apri('44-nintendo/',6);" />
+                  </menupopup>
+                </menu>
+              </menupopup>
+            </menu>
+            
+            <!-- Wii U -->
+            <menu class="menu-iconic forumeye-wii" label="WiiU" id="eenw-gameswiiu-menu">
+              <menupopup id="eenw-gameswiiu-popup">
+                <menuitem class="menuitem-iconic forumeye-wii" label="Wii U" oncommand="everyeyeNWCommon.apri(' ',9);" />
+                <menuseparator/>
+                <menu class="menu-iconic forumeye-wii" label="Giochi Wii U">
+                  <menupopup id="eenw-subgames-wiiu">
+                    <menuitem class="menuitem-iconic forumeye-wii" label="Recensioni" oncommand="everyeyeNWCommon.apri('recensioni',9);" />
+                    <menuitem class="menuitem-iconic forumeye-wii" label="In uscita" oncommand="everyeyeNWCommon.apri('inuscita',9);" />
+                    <menuitem class="menuitem-iconic forumeye-wii" label="Tutti i giochi" oncommand="everyeyeNWCommon.apri('allgames',9);" />
+                    <menuitem class="menuitem-iconic forumeye-wii" label="Covers" oncommand="everyeyeNWCommon.apri('covers',9);" />                                                              
+                  </menupopup>
+                </menu>
+                <menuseparator/>
+                <menu class="menu-iconic forumeye-wii" label="Novit&#224; Wii U">
+                  <menupopup id="eenw-subnews-wiiu">
+                    <menuitem class="menuitem-iconic forumeye-wii" label="Notizie" oncommand="everyeyeNWCommon.apri('notizie',9);" />
+                    <menuitem class="menuitem-iconic forumeye-wii" label="Anteprime" oncommand="everyeyeNWCommon.apri('anteprime',9);" />
+                    <menuitem class="menuitem-iconic forumeye-wii" label="Speciali" oncommand="everyeyeNWCommon.apri('speciali',9);" />
+                    <menuitem class="menuitem-iconic forumeye-wii" label="Video" oncommand="everyeyeNWCommon.apri('video',9);" />
+                    <menuitem class="menuitem-iconic forumeye-wii" label="Top games" oncommand="everyeyeNWCommon.apri('topgames',9);" />
+                    <menuitem class="menuitem-iconic forumeye-wii" label="Videorecensioni" oncommand="everyeyeNWCommon.apri(21,31);" />
+                    <menuitem class="menuitem-iconic forumeye-wii" label="Virtual Console" oncommand="everyeyeNWCommon.apri('virtualconsole',9);" />
+                    <menuitem class="menuitem-iconic forumeye-wii" label="I giochi pi&#367; attesi" oncommand="everyeyeNWCommon.apri('attesi',9);" />                                                                                                                        
+                  </menupopup>
+                </menu>
+                <menuseparator/>            
+                <menu class="menu-iconic forumeye-wii" label="Community Wii U">
+                  <menupopup id="eenw-subcom-wiiu">
+                    <menuitem class="menuitem-iconic forumeye-wii" label="Forum Wii U" oncommand="everyeyeNWCommon.apri('241-wii-u-wii-eye/',6);" />
+                    <menuitem class="menuitem-iconic forumeye-wii" label="Recensioni utente" oncommand="everyeyeNWCommon.apri('receutenti',9);" />
+                    <menuitem class="menuitem-iconic forumeye-wii" label="Anteprime utente" oncommand="everyeyeNWCommon.apri('anteutenti',9);" />
+                    <menuitem class="menuitem-iconic forumeye-wii" label="Mercatino Nintendo" oncommand="everyeyeNWCommon.apri('44-nintendo/',6);" />
+                  </menupopup>
+                </menu>
+              </menupopup>
+            </menu>   
+            
+            <!-- MOBILE -->
+            <menu class="menu-iconic forumeye-home" label="Mobile" id="eenw-gamesmob-menu">
+              <menupopup id="eenw-gamesmob-popup">
+                    <!-- iPhone -->             
+                    <menu class="menu-iconic forumeye-iphone" label="iPhone" >
+                      <menupopup id="eenw-gamesiph-popup">
+                        <menuitem class="menuitem-iconic forumeye-iphone" label="iPhone Home" oncommand="everyeyeNWCommon.apri(' ',15);" />
+                        <menuseparator/>
+                        <menu class="menu-iconic forumeye-iphone" label="Giochi iPhone/iPad">
+                          <menupopup id="eenw-subgames-iphone">
+                            <menuitem class="menuitem-iconic forumeye-iphone" label="Recensioni" oncommand="everyeyeNWCommon.apri('recensioni',15);" />
+                            <menuitem class="menuitem-iconic forumeye-iphone" label="Tutti i giochi" oncommand="everyeyeNWCommon.apri('allgames',15);" />
+                            <menuitem class="menuitem-iconic forumeye-iphone" label="Covers" oncommand="everyeyeNWCommon.apri('covers',15);" />                                                              
+                            <menuitem class="menuitem-iconic forumeye-iphone" label="Top games" oncommand="everyeyeNWCommon.apri('topgames',15);" />
+                          </menupopup>
+                        </menu>
+                        <menuseparator/>
+                        <menu class="menu-iconic forumeye-iphone" label="Novit&#224; iPhone e iPad">
+                          <menupopup id="eenw-subnews-iphone">
+                            <menuitem class="menuitem-iconic forumeye-iphone" label="Notizie" oncommand="everyeyeNWCommon.apri('notizie',15);" />
+                            <menuitem class="menuitem-iconic forumeye-iphone" label="Anteprime" oncommand="everyeyeNWCommon.apri('anteprime',15);" />
+                            <menuitem class="menuitem-iconic forumeye-iphone" label="Speciali" oncommand="everyeyeNWCommon.apri('speciali',15);" />
+                          </menupopup>
+                        </menu>
+                        <menuseparator/>            
+                        <menu class="menu-iconic forumeye-iphone" label="Community Apple iPhone e iPad">
+                          <menupopup id="eenw-subcom-iphone">
+                            <menuitem class="menuitem-iconic forumeye-iphone" label="Forum iPhone e iPad" oncommand="everyeyeNWCommon.apri('634-iforum-iphonefuniacom-applicazioni-e-videogiochi-per-iphone-ipad-ed-ipod-touch/',6);" />
+                            <menuitem class="menuitem-iconic forumeye-iphone" label="Forum generale Apple" oncommand="everyeyeNWCommon.apri('226-appleye-il-forum-sul-mondo-apple/',6);" />                
+                            <menuitem class="menuitem-iconic forumeye-iphone" label="Mercatino Apple" oncommand="everyeyeNWCommon.apri('257-mercatino-apple/',6);" />
+                          </menupopup>
+                        </menu>
+                      </menupopup>
+                    </menu>
+                    
+                    <!-- Android-->
+                    <menuitem class="menuitem-iconic forumeye-android" label="Android" oncommand="everyeyeNWCommon.apri(' ',11);" />
+                 </menupopup>
+              </menu> 
+                                          
+          </menupopup>
+        </menu>
+        <menuseparator id="eenw-games-sep"/>
+        <!-- CINEMA -->
+        <menu class="menu-iconic forumeye-home" label="Cinema" id="eenw-movieye-menu" >
+          <menupopup id="eenw-cinema-popup">
+            <menuitem class="menuitem-iconic boldCls forumeye-cinema" label="Movieye" oncommand="everyeyeNWCommon.apri(' ',16);" />
+            <menuseparator/>
+            <menuitem class="menuitem-iconic boldCls forumeye-cinema" label="Novit&#225; Cinema &amp; Blu-Ray" />  
+            <menuseparator/>          
+            <menuitem class="menuitem-iconic forumeye-cinema" label="Recensioni" oncommand="everyeyeNWCommon.apri('recensioni',16);" /> 
+            <menuitem class="menuitem-iconic forumeye-cinema" label="Notizie" oncommand="everyeyeNWCommon.apri('notizie',16);" />
+            <menuitem class="menuitem-iconic forumeye-cinema" label="Film in uscita" oncommand="everyeyeNWCommon.apri('inuscita',16);" />                               
+            <menuitem class="menuitem-iconic forumeye-cinema" label="Trova Film e Cinema" oncommand="everyeyeNWCommon.apri('al_cinema.asp',2);" />
+            <menuitem class="menuitem-iconic forumeye-cinema" label="Indice Box Office" oncommand="everyeyeNWCommon.apri('botteghino',16);" />
+            <menuitem class="menuitem-iconic forumeye-cinema" label="Trailer Film" oncommand="everyeyeNWCommon.apri('trailers',2);" />
+            <menuitem class="menuitem-iconic forumeye-cinema" label="Recensioni Blu-Ray e Dvd" oncommand="everyeyeNWCommon.apri('recensioni',17);" />            
+            <menuseparator/>
+            <menuitem class="menuitem-iconic boldCls forumeye-cinema" label="Community" />
+            <menuseparator/>
+            <menuitem class="menuitem-iconic forumeye-cinema" label="Recensioni utenti" oncommand="everyeyeNWCommon.apri('receutenti',16);" />
+            <menuitem class="menuitem-iconic forumeye-cinema" label="Forum Cinema" oncommand="everyeyeNWCommon.apri('5-movieye/',6);" />
+            <menuitem class="menuitem-iconic forumeye-cinema" label="Mercatino Blu-Ray" oncommand="everyeyeNWCommon.apri('46-altro-manga-dvd-blu-ray-ecc/',6);" />                    
+          </menupopup>
+        </menu>
+        <menuseparator id="eenw-movieye-sep"/>
+        <!-- Serial TV -->
+        <menu class="menu-iconic forumeye-home" label="Serie TV" id="eenw-serial-menu" >
+          <menupopup id="eenw-serial-popup">
+            <menuitem class="menuitem-iconic boldCls forumeye-serial" label="Serialeye" oncommand="everyeyeNWCommon.apri(' ',18);" />
+            <menuseparator/>
+            <menuitem class="menuitem-iconic boldCls forumeye-serial" label="Novit&#225;" />
+            <menuseparator/>
+            <menuitem class="menuitem-iconic forumeye-serial" label="Recensioni Serie Complete" oncommand="everyeyeNWCommon.apri('recensioni',18);" />            
+            <menuitem class="menuitem-iconic forumeye-serial" label="Notizie Serial Tv" oncommand="everyeyeNWCommon.apri('notizie',18);" /> 
+            <menuitem class="menuitem-iconic forumeye-serial" label="First Look e Half Season" oncommand="everyeyeNWCommon.apri('anteprime',18);" />
+            <menuitem class="menuitem-iconic forumeye-serial" label="Speciali Serie Tv" oncommand="everyeyeNWCommon.apri('speciali',18);" />
+            <menuseparator/>
+            <menuitem class="menuitem-iconic boldCls forumeye-serial" label="Community" />
+            <menuseparator/>
+            <menuitem class="menuitem-iconic forumeye-serial" label="Recensioni utenti" oncommand="everyeyeNWCommon.apri('receutenti',18);" />
+            <menuitem class="menuitem-iconic forumeye-serial" label="Forum Serie TV" oncommand="everyeyeNWCommon.apri('72-serialeye/',6);" />
+          </menupopup>
+        </menu>
+        <menuseparator id="eenw-serial-sep"/>
+        <!-- Animeye -->
+        <menu class="menu-iconic forumeye-home" label="Anime &amp; Manga" id="eenw-anime-menu" >
+          <menupopup id="eenw-anime-popup">
+            <menuitem class="menuitem-iconic boldCls forumeye-anime" label="Animeye" oncommand="everyeyeNWCommon.apri(' ',19);" />
+            <menuseparator/>
+            <menuitem class="menuitem-iconic boldCls forumeye-anime" label="Novit&#225;" />
+            <menuseparator/>
+            <menuitem class="menuitem-iconic forumeye-anime" label="Recensioni" oncommand="everyeyeNWCommon.apri('recensioni',19);" />            
+            <menuitem class="menuitem-iconic forumeye-anime" label="Notizie" oncommand="everyeyeNWCommon.apri('notizie',19);" />
+            <menuitem class="menuitem-iconic forumeye-anime" label="Anteprime" oncommand="everyeyeNWCommon.apri('anteprime',19);" />
+            <menuitem class="menuitem-iconic forumeye-anime" label="Speciali" oncommand="everyeyeNWCommon.apri('speciali',19);" />
+            <menuseparator/>
+            <menuitem class="menuitem-iconic boldCls forumeye-anime" label="Community" />
+            <menuseparator/>
+            <menuitem class="menuitem-iconic forumeye-anime" label="Recensioni utenti" oncommand="everyeyeNWCommon.apri('receutenti',19);" />
+            <menuitem class="menuitem-iconic forumeye-anime" label="Forum Manga in Italia" oncommand="everyeyeNWCommon.apri('28-animeye-eyes-on-moving-images/',6);" />
+            <menuitem class="menuitem-iconic forumeye-anime" label="Forum Anime Subs" oncommand="everyeyeNWCommon.apri('382-animeye-japan/',6);" />            
+          </menupopup>
+        </menu>
+        <menuseparator id="eenw-anime-sep"/>
+        <!-- Techeye -->
+        <menu class="menu-iconic forumeye-home" id="eenw-tech-menu" label="Tech">
+          <menupopup id="eenw-eyech-popup">
+            <menuitem class="menuitem-iconic boldCls forumeye-tech" label="Techeye" oncommand="everyeyeNWCommon.apri(' ',24);" />
+            <menuseparator/>            
+            <menuitem class="menuitem-iconic boldCls forumeye-tech" label="Novit&#225;" />
+            <menuseparator/>
+            <menuitem class="menuitem-iconic forumeye-tech" label="Notizie" oncommand="everyeyeNWCommon.apri('notizie',24);" />
+            <menuitem class="menuitem-iconic forumeye-tech" label="Tutti gli articoli" oncommand="everyeyeNWCommon.apri('tech',25);" />                            
+            <menuitem class="menuitem-iconic forumeye-tech" label="Recensioni" oncommand="everyeyeNWCommon.apri('recensioni',24);" /> 
+            <menuitem class="menuitem-iconic forumeye-tech" label="Speciali" oncommand="everyeyeNWCommon.apri('speciali',24);" />
+            <menuseparator/>
+            <menuitem class="menuitem-iconic boldCls forumeye-tech" label="Community" />
+            <menuseparator/>            
+            <menuitem class="menuitem-iconic forumeye-tech" label="Recensioni utenti" oncommand="everyeyeNWCommon.apri('receutenti',24);" />
+            <menuitem class="menuitem-iconic forumeye-tech" label="Forum Mobile e Tecnologia" oncommand="everyeyeNWCommon.apri('179-techeye-il-forum-sul-mondo-della-tecnologia/',6);" />
+            <menuitem class="menuitem-iconic forumeye-tech" label="Forum iPad/iPhone" oncommand="everyeyeNWCommon.apri('634-iphone-ipad-ed-ipod-touch-in-collaborazione-con-iphonefuniacom',6);" />          
+          </menupopup>
+        </menu>
+        <menuseparator id="eenw-tech-sep"/>
+        <!-- Altro -->
+        <menu class="menu-iconic forumeye-home" id="eenw-other-menu" label="Altro">
+          <menupopup id="eenw-eyech-popup">
+            <menuitem class="menuitem-iconic boldCls forumeye-home" label="Altri Link" />
+            <menuseparator/>            
+            <menuitem class="menuitem-iconic forumeye-multi" label="Versione Mobile Everyeye" oncommand="everyeyeNWCommon.apri('http://m.everyeye.it/',0);" />
+            <menuitem class="menuitem-iconic forumeye-multi" label="Indice Charts Videogiochi" oncommand="everyeyeNWCommon.apri('charts',1);" />            
+            <menuitem class="menuitem-iconic forumeye-multi" label="Lista eventi" oncommand="everyeyeNWCommon.apri('eventi',1);" />                            
+            <menuitem class="menuitem-iconic forumeye-multi" label="Dc Gba Gamecube Ps2 Xbox" oncommand="everyeyeNWCommon.apri('retro',2);" /> 
+            <menuitem class="menuitem-iconic forumeye-multi" label="Lo Staff di Everyeye.it" oncommand="everyeyeNWCommon.apri('staff.asp',2);" />
+            <menuseparator/>
+            <menuitem class="menuitem-iconic boldCls forumeye-home" label="Social Networks &amp; Services" />
+            <menuseparator/>
+            <menuitem class="menuitem-iconic forumeye-face" label="Facebook" oncommand="everyeyeNWCommon.apri('http://www.facebook.com/pages/Everyeye-Network/63066643464',0);" />
+            <menuitem class="menuitem-iconic forumeye-twit" label="Twitter" oncommand="everyeyeNWCommon.apri('http://twitter.com/everyeye',0);" />
+            <menuitem class="menuitem-iconic forumeye-podcast" label="iTunes" oncommand="everyeyeNWCommon.apri('http://www.itunes.com/podcast?id=343865081',0);" />
+            <menuitem class="menuitem-iconic forumeye-yout" label="Youtube" oncommand="everyeyeNWCommon.apri('http://www.youtube.com/user/EveryeyeNetwork',0);" />
+            <menuitem class="menuitem-iconic forumeye-rss" label="Feed RSS divisi per argomento" oncommand="everyeyeNWCommon.apri('notizia/nuovi-feed-rss-notizie-divisi-per-categoria_86663',1);" />            
+            <menuitem class="menuitem-iconic forumeye-friend" label="FriendFeed" oncommand="everyeyeNWCommon.apri('http://friendfeed.com/everyeye',0);" />          
+            <menuitem class="menuitem-iconic forumeye-multi" label="Everyeye Gadget" oncommand="everyeyeNWCommon.apri('widget.asp',2);" />            
+            <menuitem class="menuitem-iconic forumeye-eyewidget" label="OSX Dashboard Widget" oncommand="everyeyeNWCommon.apri('http://www.antoniolore.net/everyeyewidget.php',0);" />          
+            <menuseparator/>
+            <menuitem class="menuitem-iconic boldCls forumeye-home" label="Guide e info su Everyeye.it" />
+            <menuseparator/>            
+            <menuitem class="menuitem-iconic forumeye-multi" label="Guida alla Chat di Everyeye.it" oncommand="everyeyeNWCommon.apri('notizia/guida-alla-chat-di-everyeye-it_76879',1);" />
+            <menuitem class="menuitem-iconic forumeye-multi" label="FAQ e istruzioni Eyechievement" oncommand="everyeyeNWCommon.apri('articoli/faq-e-pagina-di-aiuto-su-everyeyeit_articolo_9726',1);" />            
+            <menuitem class="menuitem-iconic forumeye-multi" label="10 Anni di Everyeye.it" oncommand="everyeyeNWCommon.apri('articoli/10-anni-di-everyeye_speciale_11508?cactus=1',1);" />                            
+          </menupopup>
+        </menu>
+        <menuseparator id="eenw-altro-sep"/>
+        <!-- EYEchievements -->
+        <menu class="menu-iconic forumeye-home" id="eenw-eyech-menu" label="MyEye" >
+          <menupopup id="eenw-eyech-popup">
+            <menuitem class="menuitem-iconic forumeye-multi" label="Scopri gli Eyechievements" oncommand="everyeyeNWCommon.apri('articoli/eyechievements_speciale_9504',1);" />
+            <menuitem class="menuitem-iconic forumeye-multi" label="FAQ e istruzioni Eyechievements" oncommand="everyeyeNWCommon.apri('articoli/faq-e-pagina-di-aiuto-su-everyeyeit_articolo_9726',1);" />
+            <menuseparator/>
+            <menuitem class="menuitem-iconic forumeye-multi" label="I Vincitori di questo mese" oncommand="everyeyeNWCommon.apri('notizia/eyechievements-i-vincitori-di-questo-mese_57589',1);" />            
+            <menuitem class="menuitem-iconic forumeye-multi" label="I premi di questo mese" oncommand="everyeyeNWCommon.apri('articoli/lista-dei-premi_speciale_9713',1);" />            
+            <menuitem class="menuitem-iconic forumeye-multi" label="Gli utenti pi&#367; attivi di questo mese" oncommand="everyeyeNWCommon.apri('utenti?filtro_1=mese',1);" />
+            <menuitem class="menuitem-iconic forumeye-multi" label="Gli utenti pi&#367; attivi di oggi" oncommand="everyeyeNWCommon.apri('utenti?filtro_1=giorno',1);" />          
+            <menuitem class="menuitem-iconic forumeye-multi" label="Forum di Supporto" oncommand="everyeyeNWCommon.apri('index.php?/forum/556-eyechievements-forum-di-supporto/',5);" />          
+          </menupopup>
+        </menu>
+        <menuseparator id="eenw-eyech-sep"/>
+        <!-- WEB TV -->
+        <menu class="menu-iconic forumeye-home" id="eenw-webtv-menu" label="EyeTV">
+          <menupopup id="eenw-webtv-popup">
+            <menuitem class="menuitem-iconic boldCls forumeye-webtv" label="Everyeye TV" oncommand="everyeyeNWCommon.apri(' ',32);"/>
+            <menuseparator/>
+            <menuitem class="menuitem-iconic forumeye-webtv" label="Videorecensioni" oncommand="everyeyeNWCommon.apri('recensioni',3);" />
+            <menuitem class="menuitem-iconic forumeye-webtv" label="Trailer" oncommand="everyeyeNWCommon.apri('trailer',3);" />            
+            <menuitem class="menuitem-iconic forumeye-webtv" label="VideoClassifiche" oncommand="everyeyeNWCommon.apri('classifiche',3);" />
+            <menuitem class="menuitem-iconic forumeye-webtv" label="Speciali" oncommand="everyeyeNWCommon.apri('speciali',3);" />
+            <menuseparator/>
+            <menuitem class="menuitem-iconic boldCls forumeye-webtv" label="Movieye TV" />
+            <menuseparator/>
+            <menuitem class="menuitem-iconic forumeye-webtv" label="Trailer Film" oncommand="everyeyeNWCommon.apri('trailers/',2);" />
+            <menuitem class="menuitem-iconic forumeye-webtv" label="Prossime uscite" oncommand="everyeyeNWCommon.apri('prossime',4);" />            
+          </menupopup>
+        </menu>
+        <menuseparator id="eenw-webtv-sep"/>         
+        <!-- FORUMEYE MENU -->
+        <menu class="menu-iconic forumeye-home" id="eenw-forum-menu" label="Forumeye">
+          <menupopup id="eenw-forum-popup">
+            <menuitem class="menuitem-iconic forumeye-forum" label="Forumeye" oncommand="everyeyeNWCommon.apri('',5);" />
+            <menuseparator/>
+            <menu class="menu-iconic forumeye-info" id="eenw-reg-menu" label="Regolamento e Aiuto">
+              <menupopup id="eenw-reg-popup">
+                <menuitem class="menuitem-iconic forumeye-reg" label="Regolamento" oncommand="everyeyeNWCommon.apri('?app=forums&amp;module=extras&amp;section=boardrules',5);" />
+                <menuitem class="menuitem-iconic forumeye-faq" label="Aiuto" oncommand="everyeyeNWCommon.apri('?app=core&amp;module=help',5);" />
+              </menupopup>
+            </menu>
+            <menuseparator/>
+            <!-- Next Generation Gaming -->
+            <menu class="menu-iconic forumeye-forum" id="eenw-nextgen-menu" label="Next Generation Gaming">
+              <menupopup id="eenw-nextgen-popup">
+                <menuitem class="menuitem-iconic forumeye-f_news" label="News e Articoli da Everyeye.it" oncommand="everyeyeNWCommon.apri('613-news-e-articoli-da-everyeye-it',6);" />
+                <menu class="menu-iconic forumeye-f_giochi" id="eenw-vidcon-menu" label="VideogamersEye">
+                  <menupopup id="eenw-vidcon-popup">
+                    <menuitem class="menuitem-iconic forumeye-f_giochi" label="VideogamersEye" oncommand="everyeyeNWCommon.apri('6-VideogamersEye/',6);" />
+                    <menuseparator/>
+                    <menuitem class="menuitem-iconic forumeye-f_giochi" label="Fifa Eye - Il Forum dedicato al calcio secondo EA" oncommand="everyeyeNWCommon.apri('798-fifa-eye-il-forum-dedicato-al-calcio-secondo-ea/',6);" />
+                    <menuitem class="menuitem-iconic forumeye-f_giochi" label="PES Eye - Il Forum dedicato al calcio secondo Konami" oncommand="everyeyeNWCommon.apri('768-pes-eye-il-forum-dedicato-al-calcio-secondo-konami/',6);" />
+                    <menuitem class="menuitem-iconic forumeye-f_giochi" label="Beat'em EYE" oncommand="everyeyeNWCommon.apri('874-beatem-eye/',6);" />
+                  </menupopup>
+                </menu>
+                <menu class="menu-iconic forumeye-f_home_pc" id="eenw-pc-menu" label="PcEye: Tutto sui videogiochi per PC">
+                  <menupopup id="eenw-pc2-popup">
+                    <menuitem class="menuitem-iconic forumeye-f_home_pc" label="PcEye: Tutto sui videogiochi per PC" oncommand="everyeyeNWCommon.apri('25-pceye-tutto-sui-videogiochi-per-pc/',6);" />
+                    <menuseparator/>                                                    
+                    <menuitem class="menuitem-iconic forumeye-f_home_pc" label="Pc: Zona Tecnica -> Aiuti e consigli per l'hardware e software PC" oncommand="everyeyeNWCommon.apri('686-pc-zona-tecnica-&gt;-aiuti-e-consigli-per-lhardware-e-software-pc/',6);" />                                                     
+                    <menuitem class="menuitem-iconic forumeye-f_home_pc" label="Mercatino PC" oncommand="everyeyeNWCommon.apri('628-mercatino-pc/',6);" />                                                                                                         
+                  </menupopup>
+                </menu>
+                <menu class="menu-iconic forumeye-x1" id="eenw-x360-menu" label="Xbox One / Xbox 360 Eye">
+                  <menupopup id="eenw-x360-popup">
+                    <menuitem class="menuitem-iconic forumeye-x1" label="Xbox One / Xbox 360 Eye" oncommand="everyeyeNWCommon.apri('239-xbox360-eye/',6);" />
+                    <menuseparator/>                                                    
+                    <menuitem class="menuitem-iconic forumeye-x1" label="[Xbox ONE / 360] Zona HW" oncommand="everyeyeNWCommon.apri('262-xbox-360-zona-hw/',6);" />                  </menupopup>
+                </menu>
+                <menu class="menu-iconic forumeye-f_ps3" id="eenw-ps3-menu" label="PS4 / Playstation 3 Eye">
+                  <menupopup id="eenw-ps3-popup">
+                    <menuitem class="menuitem-iconic forumeye-f_ps3" label="PS4 / Playstation 3 Eye" oncommand="everyeyeNWCommon.apri('240-playstation-3-eye/',6);" />
+                    <menuseparator/>
+                    <menuitem class="menuitem-iconic forumeye-f_ps3" label="Trofei PS4 / PS3 Eye" oncommand="everyeyeNWCommon.apri('335-play3eye-il-sito-news-articoli-speciali/',6);" />                                                    
+                    <menuitem class="menuitem-iconic forumeye-f_ps3" label="[PS4/PS3] Zona HW" oncommand="everyeyeNWCommon.apri('323-ps3-zona-hw/',6);" />                    
+                    <menuitem class="menuitem-iconic forumeye-f_ps3" label="PlayStation Store: Condivisioni" oncommand="everyeyeNWCommon.apri('479-playstation-store-condivisioni/',6);" /> 
+                  </menupopup>
+                </menu>
+                <menu class="menu-iconic forumeye-wii" id="eenw-wii-menu" label="Wii U / Wii Eye">
+                  <menupopup id="eenw-wii-popup">
+                    <menuitem class="menuitem-iconic forumeye-wii" label="Wii U / Wii Eye" oncommand="everyeyeNWCommon.apri('241-wii-eye/',6);" />
+                    <menuseparator/>
+                    <menuitem class="menuitem-iconic forumeye-wii" label="Wii - Il sito - News, Articoli, Speciali" oncommand="everyeyeNWCommon.apri('338-wii-il-sito-news-articoli-speciali/',6);" />                                                    
+                    <menuitem class="menuitem-iconic forumeye-wii" label="Monster Hunter Eye" oncommand="everyeyeNWCommon.apri('641-monster-hunter-eye/',6);" />                    
+                  </menupopup>
+                </menu>
+                
+                <menu class="menu-iconic forumeye-f_ds" label="3DS / 2DS / DS Eye">
+                  <menupopup id="eenw-ds-popup">
+                    <menuitem class="menuitem-iconic forumeye-f_ds" label="3DS / 2DS / DS Eye" oncommand="everyeyeNWCommon.apri('253-3ds-ds-gba-eye/',6);" />
+                    <menuseparator/>
+                    <menuitem class="menuitem-iconic forumeye-f_ds" label="[DSEye] News, Anteprime, Recensioni" oncommand="everyeyeNWCommon.apri('260-dseye-news-anteprime-recensioni/',6);" />                                                    
+                  </menupopup>
+                </menu>               
+                
+                <menuitem class="menuitem-iconic forumeye-f_psp" label="Playstaion Vita / PSP / Xperia Play" oncommand="everyeyeNWCommon.apri('254-psp-eye-e-psp-homebrew/',6);" />
+                                                                                    
+                <menuitem class="menuitem-iconic forumeye-f_trofeo" label="Trofei PS4 / PS3 Eye" oncommand="everyeyeNWCommon.apri('1023-trofei-ps3-eye/',6);" />
+                <menuitem class="menuitem-iconic forumeye-f_achiev" label="Obiettivi XBOX One / 360 Eye" oncommand="everyeyeNWCommon.apri('968-obiettivi-xbox-360-eye/',6);" />                        
+                
+                <menu class="menu-iconic forumeye-f_hw" id="eenw-hw-menu" label="Hardware &amp; Software Charts">
+                  <menupopup id="eenw-hw-popup">
+                    <menuitem class="menuitem-iconic forumeye-f_hw" label="Hardware &amp; Software Charts" oncommand="everyeyeNWCommon.apri('343-hardware-software-charts/',6);" />
+                    <menuseparator/>
+                    <menuitem class="menuitem-iconic forumeye-f_hw" label="Archivio Dati" oncommand="everyeyeNWCommon.apri('346-archivio-dati/',6);" />
+                    <menuitem class="menuitem-iconic forumeye-f_hw" label="Charts Forum Staff" oncommand="everyeyeNWCommon.apri('350-charts-forum-staff/',6);" />
+                  </menupopup>
+                </menu>                               
+              </menupopup>
+            </menu>            
+            <!-- General Personal Computer Forums -->
+            <menu class="menu-iconic forumeye-forum" id="eenw-general-menu" label="Tech and Personal Computer Forums">
+              <menupopup id="eenw-pc-popup">
+                <menu class="menu-iconic forumeye-f_pctech" id="eenw-pctech-menu" label="Personal Computer Tecnology: Zona Tecnica">
+                  <menupopup id="eenw-pctech-popup">
+                  <menuitem class="menuitem-iconic forumeye-f_pctech" id="eenw-pctech-menu" label="Personal Computer Tecnology: Zona Tecnica" oncommand="everyeyeNWCommon.apri('26-personal-computer-tecnology-zona-tecnica/',6);" />                                                      
+                  <menuseparator/>
+                  <menuitem class="menuitem-iconic forumeye-f_pctech" label="Personal Computer Technology - Community Staff" oncommand="everyeyeNWCommon.apri('690-personal-computer-technology-community-staff/',6);" />                                                      
+                  <menuitem class="menuitem-iconic forumeye-f_pctech" label="Mercatino PC" oncommand="everyeyeNWCommon.apri('631-mercatino-pc/',6);" />                                                      
+                  </menupopup>
+                </menu>  
+                <menu class="menu-iconic forumeye-f_apple" id="eenw-apple-menu" label="Appleye - iPhone, iPad, iMac e Mac Book">
+                  <menupopup id="eenw-apple-popup">
+                  <menuitem class="menuitem-iconic forumeye-f_apple" label="Appleye - iPhone, iPad, iMac e Mac Book" oncommand="everyeyeNWCommon.apri('226-appleye-il-forum-sul-mondo-apple/',6);" />                                                      
+                  <menuseparator/>                                                      
+                  <menuitem class="menuitem-iconic forumeye-f_apple" label="Mercatino Apple" oncommand="everyeyeNWCommon.apri('259-mercatino-apple/',6);" />                                                                        
+                  </menupopup>
+                </menu>                
+                <menuitem class="menuitem-iconic forumeye-f_mobile" id="eenw-mobile-menu" label="TechEye: Il forum sul mondo della Tecnologia" oncommand="everyeyeNWCommon.apri('179-techeye-il-forum-sul-mondo-della-tecnologia/',6);" />
+              </menupopup>
+            </menu>
+            <!-- Digital Life: Eyes on Entertainment -->
+            <menu class="menu-iconic forumeye-forum" id="eenw-digital-menu" label="Digital Life: Eyes on Entertainment">
+              <menupopup id="eenw-digital-popup">
+                <menu class="menu-iconic forumeye-f_movie" id="eenw-movie-menu" label="Cinema - Movieye">
+                  <menupopup id="eenw-movie-popup">
+                    <menuitem class="menuitem-iconic forumeye-forum" label="Movieye" oncommand="everyeyeNWCommon.apri('5-cinema-movieye/',6);" />
+                    <menuseparator/>
+                    <menuitem class="menuitem-iconic forumeye-forum" label="Movieye : Cinema , DVD : Il sito - Recensioni, Anteprime e notizie" oncommand="everyeyeNWCommon.apri('339-movieye-cinema-dvd-il-sito-recensioni-anteprime-e-notizie/',6);" />                                                          
+                    <menuitem class="menuitem-iconic forumeye-forum" label="Movieye.tv" oncommand="everyeyeNWCommon.apri('483-movieye-tv/',6);" />                                                          
+                  </menupopup>
+                </menu>
+            <!-- Serialeye -->
+            <menu class="menu-iconic forumeye-f_serial" id="eenw-serial-menu" label="Serie TV - Serialeye">
+              <menupopup id="eenw-serial-popup">
+                <menuitem class="menuitem-iconic forumeye-f_serial" label="Serialeye" oncommand="everyeyeNWCommon.apri('72-serial-tv-serialeye/',6);" />
+                <menuseparator/>
+                <menuitem class="menuitem-iconic forumeye-f_serial" label="Commenti News e Articoli da Serialeye" oncommand="everyeyeNWCommon.apri('585-commenti-news-e-articoli-da-serialeye/',6);" />                                                            
+              </menupopup>
+            </menu>
+            
+            <menu class="menu-iconic forumeye-f_music" id="eenw-music-menu" label="Musiceye : Il tempio della musica">
+              <menupopup id="eenw-music-popup">
+                <menuitem class="menuitem-iconic forumeye-f_music" id="eenw-music-menu" label="Musiceye : Il tempio della musica" oncommand="everyeyeNWCommon.apri('4-musiceye-il-tempio-della-musica/',6);" />
+                <menuseparator/>
+                <menuitem class="menuitem-iconic forumeye-f_music" label="MusicStore: il mercatino della musica" oncommand="everyeyeNWCommon.apri('509-musicstore-il-mercatino-della-musica/',6);" />
+              </menupopup>
+            </menu>
+      
+            <!-- Animeye -->               
+            <menuitem class="menuitem-iconic forumeye-f_anime" label="Animeye" oncommand="everyeyeNWCommon.apri('382-animeye/',6);" />                       
+            <menuitem class="menuitem-iconic forumeye-f_fumet" label="Fumetteye" oncommand="everyeyeNWCommon.apri('1088-fumetteye/',6);" />                                   
+            </menupopup>
+          </menu>
+          <!-- RubrichEye -->
+          <menu class="menu-iconic forumeye-forum" id="eenw-rubriche-menu" label="RubrichEye">
+            <menupopup id="eenw-rubriche-popup">
+              <!-- RPGEYE -->                  
+                <menuitem class="menuitem-iconic forumeye-f_rpg" label="RPGEye: Il forum degli RPG Giapponesi ed Occidentali" oncommand="everyeyeNWCommon.apri('13-rpgeye-il-forum-degli-rpg-giapponesi-ed-occidentali/',6);" />
+                <menuitem class="menuitem-iconic forumeye-f_beat" label="Beat 'em Eye" oncommand="everyeyeNWCommon.apri('165-beat-em-eye/',6);" />                  
+              
+                <menu class="menu-iconic forumeye-f_retro" id="eenw-retro-menu" label="RetroEye : once upon a game">
+                  <menupopup id="eenw-retro-popup">
+                    <menuitem class="menuitem-iconic forumeye-f_retro" label="RetroEye : once upon a game" oncommand="everyeyeNWCommon.apri('27-retroeye-once-upon-a-game/',6);" />
+                    <menuseparator/>
+                    <menuitem class="menuitem-iconic forumeye-f_retro" label="Mercatino Dei Collezionisti" oncommand="everyeyeNWCommon.apri('414-mercatino-dei-collezionisti/',6);" />
+                    <menuitem class="menuitem-iconic forumeye-f_retro" label="[Everyeye.it] News, Anteprime e Recensioni sul mondo dei videogiochi" oncommand="everyeyeNWCommon.apri('138-everyeyeit-news-anteprime-e-recensioni-sul-mondo-dei-videogiochi/',6);" />                                                                  
+                    <menuitem class="menuitem-iconic forumeye-f_retro" label="Playstation 2" oncommand="everyeyeNWCommon.apri('796-playstation-2/',6);" />                                                                  
+                  </menupopup>
+                </menu>
+                
+                <menu class="menu-iconic forumeye-f_dream" id="eenw-dream-menu" label="Dreameye / Eye on Sega">
+                  <menupopup id="eenw-dream-popup">
+                    <menuitem class="menuitem-iconic forumeye-f_dream" label="Dreameye / Eye on Sega" oncommand="everyeyeNWCommon.apri('22-dreameye-eye-on-sega/',6);" />
+                    <menuseparator/>
+                    <menuitem class="menuitem-iconic forumeye-f_dream" label="Shenmueye" oncommand="everyeyeNWCommon.apri('24-shenmueye/',6);" />
+                  </menupopup>
+                </menu>
+              </menupopup>
+            </menu>
+            <!-- MAGAZINES -->
+            <menu class="menu-iconic forumeye-forum" id="eenw-mag-menu" label="Magazines">
+              <menupopup id="eenw-mag-popup">
+                <!-- Tema Libero -->
+                  <menu class="menu-iconic forumeye-f_libero" label="Tema Libero">
+                    <menupopup id="eenw-libero-popup">
+                      <menuitem class="menuitem-iconic forumeye-f_libero" label="Tema Libero" oncommand="everyeyeNWCommon.apri('1-tema-libero/',6);" />                 
+                      <menuseparator/>                                              
+                      <!-- TettEye -->
+                      <menuitem class="menuitem-iconic forumeye-f_tetteye" label="L'isola del Dr. Zinnemmx" oncommand="everyeyeNWCommon.apri('445-lisola-del-dr-zinnemmx/',6);" />                                              
+                    </menupopup>
+                  </menu>
+                                      
+                <menu class="menu-iconic forumeye-f_ironic" id="eenw-ironic-menu" label="Accademia dell'Ironia">
+                  <menupopup id="eenw-ironic-popup">
+                    <menuitem class="menuitem-iconic forumeye-f_ironic" label="Accademia dell'Ironia" oncommand="everyeyeNWCommon.apri('348-ironic/',6);" />
+                    <menuseparator/>
+                    <menuitem class="menuitem-iconic forumeye-f_ironic" label="Brutteye Manager" oncommand="everyeyeNWCommon.apri('873-battle-arena-brutteye/',6);" />
+                    <menuitem class="menuitem-iconic forumeye-f_ironic" label="iStory Channel" oncommand="everyeyeNWCommon.apri('1034-istory-channel/',6);" />                  
+                    <menuitem class="menuitem-iconic forumeye-f_ironic" label="La Tana degli Accademici" oncommand="everyeyeNWCommon.apri('978-la-tana-degli-accademici/',6);" />                  
+                  </menupopup>
+                </menu>
+                
+                <menuitem class="menuitem-iconic forumeye-f_visual" label="PhotoEye: Il Ritrovo degli Artisti" oncommand="everyeyeNWCommon.apri('306-visualeye-il-ritrovo-degli-artisti/',6);" />
+                
+                <menu class="menu-iconic forumeye-f_soccer" id="eenw-soccer-menu" label="Al Bar dello Sport">
+                  <menupopup id="eenw-soccer-popup">
+                    <menuitem class="menuitem-iconic forumeye-f_soccer" label="Al Bar dello Sport" oncommand="everyeyeNWCommon.apri('234-il-bar-dello-sport-football-&amp;-bros/',6);" />
+                    <menuseparator/>
+                    <menuitem class="menuitem-iconic forumeye-f_soccer" label="Forum moderatori soccereye" oncommand="everyeyeNWCommon.apri('555-forum-moderatori-soccereye/',6);" />
+                  </menupopup>
+                </menu>
+                
+                <menuitem class="menuitem-iconic forumeye-f_motori" id="eenw-motori-menu" label="Motoreye" oncommand="everyeyeNWCommon.apri('98-motoreye/',6);" />
+                <menuitem class="menuitem-iconic forumeye-f_tiger" id="eenw-tiger-menu" label="Eye of the Tiger" oncommand="everyeyeNWCommon.apri('305-eye-of-the-tiger/',6);" />                                                                        
+              </menupopup>
+            </menu>              
+            <!-- FORUM DEI TORNEI -->
+            <menu class="menu-iconic forumeye-forum" id="eenw-tornei-menu" label="Forum dei Tornei e Forum Clan">
+              <menupopup id="eenw-tornei-popup">
+                <menuitem class="menuitem-iconic forumeye-f_tornei" label="Tornei in corso e Tornei in preparazione" oncommand="everyeyeNWCommon.apri('528-tornei-in-corso-e-tornei-in-preparazione/',6);" />
+                <menuitem class="menuitem-iconic forumeye-f_clan" label="I Clan ufficiali su forumeye.it" oncommand="everyeyeNWCommon.apri('61-i-clan-ufficiali-su-forumeye-it/',6);" />
+              </menupopup>
+            </menu>
+            <!-- MERCATINO -->
+            <menu class="menu-iconic forumeye-forum" id="eenw-market-menu" label="Mercatino">
+              <menupopup id="eenw-market-popup">
+                <menuitem class="menuitem-iconic forumeye-f_market" label="Mercatino Globale" oncommand="everyeyeNWCommon.apri('49-mercatino-globale/',6);" />
+                <menuseparator/>
+                <menuitem class="menuitem-iconic forumeye-f_market" label="Sony" oncommand="everyeyeNWCommon.apri('43-sony/',6);" />
+                <menuitem class="menuitem-iconic forumeye-f_market" label="Microsoft" oncommand="everyeyeNWCommon.apri('45-microsoft/',6);" />
+                <menuitem class="menuitem-iconic forumeye-f_market" label="Nintendo" oncommand="everyeyeNWCommon.apri('44-nintendo/',6);" />
+                <menuitem class="menuitem-iconic forumeye-f_market" label="Hi-Fi &amp; Tecnologie" oncommand="everyeyeNWCommon.apri('65-hi-fi-tecnologie/',6);" />
+                <menuitem class="menuitem-iconic forumeye-f_market" label="Altro (Manga, DVD , Blue Ray ecc.)" oncommand="everyeyeNWCommon.apri('46-altro-manga-dvd-blu-ray-ecc/',6);" />
+                <menuitem class="menuitem-iconic forumeye-f_market" label="Mercatino Apple" oncommand="everyeyeNWCommon.apri('257-mercatino-apple/',6);" />
+                <menuitem class="menuitem-iconic forumeye-f_market" label="Mercatino Dei Collezionisti" oncommand="everyeyeNWCommon.apri('413-mercatino-dei-collezionisti/',6);" />
+                <menuitem class="menuitem-iconic forumeye-f_market" label="MusicStore: il mercatino della musica" oncommand="everyeyeNWCommon.apri('487-musicstore-il-mercatino-della-musica/',6);" />
+                <menuitem class="menuitem-iconic forumeye-f_market" label="Mercatino PC" oncommand="everyeyeNWCommon.apri('692-mercatino-pc/',6);" />
+              </menupopup>
+            </menu>
+            <!-- COMMUNITY -->
+            <menu class="menu-iconic forumeye-forum" id="eenw-com-menu" label="Community">
+              <menupopup id="eenw-com-popup">
+                <menuitem class="menuitem-iconic forumeye-f_tips" label="Suggerimenti e Domande: linea diretta con lo Staff" oncommand="everyeyeNWCommon.apri('30-suggerimenti-e-domande-linea-diretta-con-lo-staff/',6);" />
+                <menuitem class="menuitem-iconic forumeye-f_eyechie" label="EYEchievements: forum di supporto" oncommand="everyeyeNWCommon.apri('556-eyechievements-forum-di-supporto/',6);" />
+                <menuitem class="menuitem-iconic forumeye-f_rece" label="Commenti Recensione Utente Everyeye.it" oncommand="everyeyeNWCommon.apri('571-commenti-recensione-utente-everyeye-it/',6);" />
+              </menupopup>
+            </menu>
+            <!-- ****** -->
+            <!-- FORUMEYE STAFF -->
+            <menu class="menu-iconic forumeye-forum" id="eenw-staff-menu" label="Forumeye Staff">
+              <menupopup id="eenw-staff-popup">
+                <menuitem class="menuitem-iconic forumeye-forum" label="Forumeye.it: Organizzatori &amp; Clans" oncommand="everyeyeNWCommon.apri('207-forumeyeit-organizzatori-clans/',6);" />
+              </menupopup>
+            </menu>
+            <!-- ****** -->                 
+              <menuseparator/>
+              <menuitem class="menuitem-iconic forumeye-addon" label="Topic di supporto dell'addon" oncommand="everyeyeNWCommon.apri('http://forum.everyeye.it/invision/index.php?/topic/474398-addon-firefox-per-navigare-sul-forum-e-su-i-siti-del-network/',0);" />
+              </menupopup>
+            </menu>
+            <menuseparator id="eenw-forum-sep"/>
+            <!-- FINE FORUM-->
+            
+            <!-- EVENTI IN CORSO -->
+            <menu id="eenw-evento-menu" label="Ultimi Eventi" class="menu-iconic forumeye-home">
+              <menupopup id="eenw-evento-popup" onpopupshowing="everyeyeNWEvento.checkDate();" >
+                <menuitem id="eenw-forumeye-evento" class="menuitem-iconic forumeye-eventoL" label="Caricamento..." />                 
+              </menupopup>
+            </menu>
+            <menuseparator id="eenw-evento-sep"/>   
+                    
+            <!-- NEWS -->
+            <menu id="eyenews-gamemenu" label="News" class="menu-iconic forumeye-gameitem">
+              <menupopup id="eyenews-gamepopup" >
+                <menuitem label="Nessuna news" id="eyenews-gameitem" />
+              </menupopup>
+            </menu>  
+            <!-- FINE NEWS -->
+            
+            <menuseparator/>
+                      
+            <!-- CONTEST -->
+            <menu id="eyenews-contestmenu" label="Contest" class="menu-iconic forumeye-contestitem">
+              <menupopup id="eyenews-contestpopup" >
+                <menuitem label="Nessun contest" id="eyenews-contestitem" />
+              </menupopup>
+            </menu>     
+            <!-- FINE NEWS CONTEST -->  
+             
+            <menuseparator/>
+            
+            <!-- TORNEI -->
+            <menu id="eyenews-tornmenu" label="Tornei" class="menu-iconic forumeye-tornitem">
+              <menupopup id="eyenews-tornpopup" >
+                <menuitem label="Nessun torneo" id="eyenews-tornitem" />
+              </menupopup>
+            </menu>  
+            <!-- FINE NEWS TORNEI --> 
+            
+            <menuseparator/>                                      
+            <!-- PANNELLO DI CONTROLLO -->            
+            <menuitem class="menuitem-iconic forumeye-home" id="eenw-cp-menu" label="Opzioni Profilo" oncommand="everyeyeNWCommon.apri('?app=core&amp;module=usercp&amp;tab=core',5);" />    
+            <!-- FINE -->
+          </menupopup>
+      </toolbarbutton>
+</overlay>
