@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+
+Name: install.rdf
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: WRmVZnXDxzJItqrKv5Bvaw==
+SHA1-Digest: ZIgtVdS/sNRPFFsEO07yGx7tc3Y=
+
+Name: chrome.manifest
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: flIgK/7/R1KRenbgI4fLWQ==
+SHA1-Digest: s6ThviXT0A/hoP2FuXw1d/vlpD4=
+
+Name: chrome/forumeye.jar
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: oCdX5X3K8E2WDwFbzu5SoA==
+SHA1-Digest: t2z2DkvU8LDFFEoHYkDUrlzCXxU=
+
+Name: defaults/preferences/forumeye.js
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: jAf/iq2Mfe7/MjwKRvLWaw==
+SHA1-Digest: OshydVQK0xaUGq3GeJTgq/0fUB0=
+

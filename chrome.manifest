@@ -1,0 +1,5 @@
+overlay	chrome://browser/content/browser.xul	chrome://forumeye/content/menu.xul
+content	forumeye	jar:chrome/forumeye.jar!/content/
+skin	forumeye	classic/1.0	jar:chrome/forumeye.jar!/skin/
+style	chrome://global/content/customizeToolbar.xul	chrome://forumeye/skin/forumeye.css
+style	chrome://global/content/customizeToolbar.xul	chrome://forumeye/skin/eyenews.css

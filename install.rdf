@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+  <Description about="urn:mozilla:install-manifest">     
+         <em:id>{4a061e6d-dd1b-4adb-97fc-c928725aa5b4}</em:id>
+         <em:name>Everyeye Network Menu</em:name>
+         <em:version>1.5.9.5.1-signed.1-signed</em:version>
+         <em:type>2</em:type>
+         <em:unpack>false</em:unpack>
+         <em:creator>Luca Panariello (alias luke83)</em:creator>
+         <em:description>Permette di navigare agevolmente in Everyeye.it</em:description>
+         <em:homepageURL>http://www.everyeye.it</em:homepageURL>
+         <em:iconURL>chrome://forumeye/skin/forumeye.png</em:iconURL>
+         <em:optionsURL>chrome://forumeye/content/prefs.xul</em:optionsURL>
+         <em:contributor>Luigi Cristiano (Beta Tester)</em:contributor> 
+         <em:contributor>Alessio Nardini (Beta Tester)</em:contributor>
+         
+         <em:targetApplication>
+            <Description>
+                 <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+                 <em:minVersion>3.0</em:minVersion>
+                 <em:maxVersion>35.*</em:maxVersion>
+            </Description>
+         </em:targetApplication>
+  </Description>
+</RDF>
